@@ -1,6 +1,8 @@
 <h1>Welcome to LS App</h1>
-<h3><%= @answer.course %></h3>
-<p><%= @answer.professor %></p>
-<p><%= @answer.answer_one %></p>
-<p><%= @answer.answer_two %></p>
-<p><%= @answer.answer_three %></p>
+<% @answers.each do |a| %>
+<h3><%= a.course %></h3>
+<p><%= a.professor %></p>
+<p><%= a.answer_one %></p>
+<p><%= a.answer_two %></p>
+<p><%= a.answer_three %></p>
+<% end %>
