@@ -1,0 +1,12 @@
+<br />
+<ul style="list-style: none;">
+    <li>
+        <div class="booyah-box col-xs-10 col-xs-offset-1">
+          <% @courses.each do |course| %>
+              <h3 class="text-center"><%= course.title %></h3>
+              <p><i><%= course.description %></i></p>
+              <br />
+          <% end %>
+        </div>
+    </li>
+</ul>
