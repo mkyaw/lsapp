@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'sprockets', '2.11.0'
 gem 'pg'
 gem 'devise'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
