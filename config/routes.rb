@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
-  
+  resources :courses, only: [:index, :show]
   namespace :admin do
     resources :courses, only: [:index, :new, :create, :show]
   end
