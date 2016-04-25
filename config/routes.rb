@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   resources :courses, only: [:index, :show]
   namespace :admin do
-    resources :courses, only: [:index, :new, :create, :show]
+    resources :courses, only: [:index, :new, :create, :show] do
+      resources :questions, only: [:index, :new, :create, :show]
+    end
   end
 
   # Example of regular route:
