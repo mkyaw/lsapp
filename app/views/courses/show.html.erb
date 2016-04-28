@@ -12,10 +12,12 @@
         <%= question.title %>
         <br />
         <%= link_to 'Add Answer', new_question_answer_path(question), class: 'btn btn-success btn-xs' %>
-        <% question.answers.each do |answer| %>
-            <li style="list-style: none;">
-                <strong><%= answer.title %></strong>
-            </li>
+        <% if current_user && current_user== @course.user %>
+            <% question.answers.each do |answer| %>
+                <li style="list-style: none;">
+                    <strong><%= answer.title %></strong>
+                </li>
+            <% end %>
         <% end %>
     </li>
 <% end %>
