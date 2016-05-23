@@ -14,6 +14,7 @@ gem 'sprockets', '2.11.0'
 gem 'pg'
 gem 'devise'
 gem 'simple_form'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'

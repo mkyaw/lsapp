@@ -1,34 +1,501 @@
-<!--<div class="container text-center">-->
-<!--    <h1>Welcome to LS App</h1>-->
-<!--    <h3><em>A Liberal Studies App</em></h3>-->
-<!--    <h3><strong>Cal Poly Pomona</strong></h3>-->
-<!--</div>-->
-
-<div class="hero">
-  <br />
-  <div class="frosty col-xs-10 col-xs-offset-1 text-center">
-    <br />
-    <h1>Welcome to LSApp</h1>
-    <br />
-    <h2>A Liberal Studies App</h2>
-    <h2><strong>Cal Poly Pomona</strong></h2>
-    <br />
-    <%= link_to 'Liberal Studies Courses', courses_path, class: 'btn btn-success' %>
-    <br /><br />
-    <br />
-    <div class="col-xs-10 col-xs-offset-1 features text-center">
-      <div class="col-sm-4">
-        <h3>Track Courses</h3>
-      </div>
-    
-      <div class="col-sm-4">
-        <h3>Custom Curriculum</h3>
-      </div>
-    
-      <div class="col-sm-4">
-        <h3>Assess Knowledge</h3>
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="account-wall">
+        </div>
+        <div class="intro-text">
+          <h1 class='elegantshadow'>Welcome</h1>
+          <!-- MORE EXAMPLES OF SHADOW TEXT
+          <h1 class='elegantshadow'>Elegant Shadow</h1>
+          <h1 class='deepshadow'>Deep Shadow</h1>
+          <h1 class='insetshadow'>Inset Shadow</h1>
+          <h1 class='retroshadow'>Retro Shadow</h1>
+          -->
+          <!--<span class="name"><font color="#000000">WELCOME</font></span>-->
+          <hr class="intro-divider">
+          
+        </div>
+        <!-- Image Carousel Start -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <%= image_tag("carousel/psychology.jpg") %>
+              <div class="carousel-caption">
+                <!--<h3>EXAMPLE 1</h3>
+                <p>FILL IN CAPTION IMAGE</p>-->
+              </div>
+            </div>
+            <div class="item">
+              <%= image_tag("carousel/history.jpg") %>
+              <div class="carousel-caption">
+                <!--<h3>EXAMPLE 2</h3>
+                <p>FILL IN CAPTION IMAGE</p>-->
+              </div>
+            </div>
+            <div class="item">
+              <%= image_tag("carousel/math.jpg") %>
+              <div class="carousel-caption">
+                <!--<h3>EXAMPLE 3</h3>
+                <p>FILL IN CAPTION IMAGE</p>-->
+              </div>
+            </div>
+            <div class="item">
+              <%= image_tag("carousel/music.jpg") %>
+              <div class="carousel-caption">
+                <!--<h3>EXAMPLE 4</h3>
+                <p>FILL IN CAPTION IMAGE</p>-->
+              </div>
+            </div>
+          </div>
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <!-- End Image Carousel -->
       </div>
     </div>
-    <br /><br />
   </div>
+</header>
+<!--HEADER END-->
+
+<!-- Portfolio Grid Section -->
+<section id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2><font color="#000000">Disciplines</font></h2>
+        <hr class="intro-divider1">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-offset-2 col-lg-3 col-xs-6 portfolio-item">
+        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+          </div>
+          <%= image_tag("portfolio/humanities_darkgraybg.png", class: "img-responsive") %>
+        </a>
+      </div>
+      <div class="col-lg-offset-2 col-lg-3 col-xs-6  portfolio-item">
+        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+          </div>
+          <%= image_tag("portfolio/socialscience_graybg.png", class: "img-responsive") %>
+        </a>
+      </div>
+      <div class="col-lg-offset-2 col-lg-3 col-xs-6  portfolio-item">
+        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+          </div>
+          <%= image_tag("portfolio/biologicalscience_lightgraybg.png", class: "img-responsive") %>
+        </a>
+      </div>
+      <div class="col-lg-offset-2 col-lg-3 col-xs-6  portfolio-item">
+        <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+          </div>
+          <%= image_tag("portfolio/math_whitebg.png", class: "img-responsive") %>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<!-- About Section -->
+<section class="success" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2><font color="#000000">About</font></h2>
+        <hr class="intro-divider">
+      </div>
+    </div>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+          What is the Liberal Studies major?</a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <div class="panel-body">• Oldest university degree developed in Greek times to create free thinking and educated individuals;
+            <br> • Focus on developing broad knowledge, not specialized, and strong intellectual skills;
+            <br> • Knowledge is acquired in three areas: humanities, social sciences, natural sciences and math;
+          <br> • Makes "well rounded" individual but it requires individual cognitively organize acquired knowledge for long-term recall for synthesizing and evaluating information.</div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+          Why Liberal Studes App?</a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">• Challenge for LS majors to manage the different types of knowledge, which is unique to the major, for optimal learning.</div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+          What is the Liberal Studies App?</a>
+          </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">• Application to help LS majors organize the broad knowledge for later recall and to develop disciplinary mastery and interdisciplinary thinking (synthesis)</div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">How to use Liberal Studies App?</a>
+          </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+          <div class="panel-body">
+            <ul class="list-group">
+              <li class="list-group-item">• Example entry</li>
+              <li class="list-group-item">• Example organize</li>
+              <li class="list-group-item">• Example note taking</li>
+              <li class="list-group-item">• Example synthesizing making connections</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+  
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll visible-xs visible-sm">
+  <a class="btn btn-primary" href="#page-top">
+    <i class="fa fa-chevron-up"></i>
+  </a>
+</div>
+
+<!-- Portfolio Modals -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl">
+        </div>
+      </div>
+    </div>
+    <!--HUMANITIES MODAL START-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body">
+            <h2>Humanities</h2>
+            <hr class="intro-divider">
+            <%= image_tag("portfolio/humanities.png", class: "img-responsive img-centered") %>
+            <!-- TABLE START RESPONSIVE W/ Hover-->
+            <p align="left"><b>Humanities</b> are academic disciplines that study human culture. In Middle Ages, the term was compared with divinity and referred to what is now called classics. Fields in humanities include: visual and performing arts, philosophy, civilization, literature and foreign languages.</p>
+            <br>
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr align="left">
+                    <th>Course Title</th>
+                    <th>Course ID</th>
+                    <th>Units</th>
+                  </tr>
+                </thead>
+                <tbody align="left">
+                  <tr>
+                    <td>Language Acquisition</td>
+                    <td>ENG 323</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>Children's Literature</td>
+                    <td>ENG 324</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>Integrated Arts I</td>
+                    <td>TH 423</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>Intro to Music (C1)</td>
+                    <td>MU 100</td>
+                    <td>4</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--END TABLE-->
+          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--HUMANITIES MODAL END-->
+  
+<!--SOCIAL SCIENCE MODAL START-->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-content">
+  <div class="close-modal" data-dismiss="modal">
+    <div class="lr">
+      <div class="rl">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="modal-body">
+          <h2>Social Science</h2>
+          <hr class="intro-divider">
+          <%= image_tag("portfolio/social_science.png", class: "img-responsive img-centered") %>
+          <!-- TABLE START RESPONSIVE W/ Hover-->
+          <p align="left"><b>Social Science</b> is a major category of academic disciplines, concerned with society and the relationships among individuals within a society. The main social science fields include: history, economics, political science, sociology, anthropology and ethnic &amp; gender studies.</p>
+          <br>
+          <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+              <thead>
+                <tr align="left">
+                  <th>Course Title</th>
+                  <th>Course ID</th>
+                  <th>Units</th>
+                </tr>
+              </thead>
+              <tbody align="left">
+                <tr>
+                  <td>History of World Civilization: The Ancient Period</td>
+                  <td>HST 101</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>History of World Civilization: The Middle Period</td>
+                  <td>HST 102</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>History of World Civilization: The Modern Period</td>
+                  <td>HST 103</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>United States History (D2)</td>
+                  <td>HST 201</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>United States History (D1)</td>
+                  <td>HST 202</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>History of California (C4)</td>
+                  <td>HST 370</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Human Geography (D3)</td>
+                  <td>GEO 102</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Geography of California (D4)</td>
+                  <td>GEO 351</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Intro to American Government (D1)</td>
+                  <td>PLS 201</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Child Psychology for Educators</td>
+                  <td>PSY 206</td>
+                  <td>4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--END TABLE-->
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!--SOCIAL SCIENCE MODAL END-->
+
+<!--BIOLOGICAL SCIENCE MODAL START-->
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body">
+            <h2>Biological Sciences</h2>
+            <hr class="intro-divider">
+            <%= image_tag("portfolio/biological_science.png", class: "img-responsive img-centered") %>
+            <!-- TABLE START RESPONSIVE W/ Hover-->
+            <p align="left"><b>Biological Science</b> is the study of living things that has undergone massive expansion in the years. Fields in biological science include: life science, natural science, physics, chemical science, earth science, and science &amp; technology.</p>
+            <br>
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr align="left">
+                    <th>Course Title</th>
+                    <th>Course ID</th>
+                    <th>Units</th>
+                  </tr>
+                </thead>
+                <tbody align="left">
+                  <tr>
+                    <td>Life Science &amp; Lab (B2, B3)*</td>
+                    <td>BIO 110/111L</td>
+                    <td>3/1</td>
+                  </tr>
+                  <tr>
+                    <td>Natural Disasters (B5)</td>
+                    <td>GSC 350</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>Elementary Physical Education</td>
+                    <td>KIN 328/328A</td>
+                    <td>2/1</td>
+                  </tr>
+                  <tr>
+                    <td>School Health Education</td>
+                    <td>KIN 441</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>Physics Concepts and Activities &amp; Lab (B1)*</td>
+                    <td>SCI 210/210L</td>
+                    <td>3/1</td>
+                  </tr>
+                  <tr>
+                    <td>Chemical Sciences &amp; Lab*</td>
+                    <td>SCI 211/211L</td>
+                    <td>3/1</td>
+                  </tr>
+                  <tr>
+                    <td>Earth Sciences &amp; Lab*</td>
+                    <td>SCI 212/212L</td>
+                    <td>3/1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--END TABLE-->
+          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--BIOLOGICAL SCIENCE MODAL END-->
+
+<!--MATH MODAL START-->
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-content">
+  <div class="close-modal" data-dismiss="modal">
+    <div class="lr">
+      <div class="rl">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="modal-body">
+          <h2>Math</h2>
+          <hr class="intro-divider">
+          <%= image_tag("portfolio/math.png", class: "img-responsive img-centered") %>
+          <!-- TABLE START RESPONSIVE W/ Hover-->
+          <p align="left"><b>Math</b> is the science of numbers and their operations, interrelations, combinations, generalizations and abstractions. Statistics is also part of mathematics and deals with the collection, analysis, interpretation and presentation of masses of numerical data.</p>
+          <br>
+          <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+              <thead>
+                <tr align="left">
+                  <th>Course Title</th>
+                  <th>Course ID</th>
+                  <th>Units</th>
+                </tr>
+              </thead>
+              <tbody align="left">
+                <tr>
+                  <td>Elem Math from Advanced Viewpt: Algebra**</td>
+                  <td>MAT 394</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Elem Math from Advanced Viewpt: Geometry**</td>
+                  <td>MAT 395</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Math Concepts for Elem School Tchr: Nbr Sys (B4)**</td>
+                  <td>MAT 194</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Elem Math from Advanced Viewpt: Statistics**</td>
+                  <td>MAT 494</td>
+                  <td>4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--END TABLE-->
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 </div>
