@@ -95,7 +95,7 @@ hr.star-primary:after {
 
 header {
     text-align: center;
-    color: #fff;
+    // color: #fff;
     background: #ffffff;
     background: url(image-path('diamonduphol2x.png'));
 }
@@ -511,6 +511,10 @@ h1.retroshadow {
 
 .navbar-lsapp {
     background: #007040;
+}
+
+#error_explanation {
+    color: red;
 }
 
 
