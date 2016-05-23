@@ -1,53 +1,123 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>LSApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<nav class="navbar navbar-inverse" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-        <a class="navbar-brand" href="/">LSApp</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><%= link_to 'See All Courses', courses_path %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li><a href="#">Dashboard</a></li>
-          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to 'Log In', new_user_session_path %></li>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-        <% end %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<% if notice.present? %>
-  <p class="notice"><%= notice %></p>
-<% end %>
-<% if alert.present? %>
-  <p class="alert"><%= alert %></p>
-<% end %>
-<%= yield %>
-
-</body>
-</html>
+<html lang="en">
+  <head>
+    <title>LSApp</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Cal Poly Pomona • Liberal Studies App</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body id="page-top" class="index">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-lsapp">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <!--<a class="navbar-brand" href="#page-top"><img src="img/LSLogoGold.png"></a>-->
+          <%= link_to image_tag("LSLogoGold.png"), "#page-top" %>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+              <a href="#page-top"></a>
+            </li>
+            <li>
+              <a href="addcourse.html">Add Course</a>
+            </li>
+            <li class="page-scroll">
+              <a href="#about">About</a>
+            </li>
+            <li class="page-scroll">
+              <a href="signup.html">Signup</a>
+            </li>
+            <li class="page-scroll">
+              <a href="login.html">Login</a>
+            </li>
+            <!--
+            <li class="page-scroll">
+              <a href="#contact">Contact</a>
+            </li>-->
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    
+    <!-- Body -->
+    <%= yield %>
+    
+    <!-- Footer -->
+    <footer class="text-center">
+      <div class="footer-below">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4 col-sm-4">
+              <div style="color:#000000; font-size: 16px;">
+                <h3>Location</h3>
+                <hr class="intro-divider1">
+                <ul class="list-inline footer-location">
+                  <li><center><a href="https://www.google.com/maps/place/College+of+Education+%26+Integrative+Studies,+3801+W+Temple+Ave,+Pomona,+CA+91768/@34.0591557,-117.8375563,14z/data=!4m7!1m4!3m3!1s0x80c32eae118cce57:0x93eabe310699ac80!2sCollege+of+Education+%26+Integrative+Studies,+3801+W+Temple+Ave,+Pomona,+CA+91768!3b1!3m1!1s0x80c32eae118cce57:0x93eabe310699ac80?hl=en" target="_blank" class="btn-social btn-outline"><i class="fa fa-map-marker fa-lg"></i></a></li></center>
+                  <br /><br />
+                  <li><em>3801 W. Temple Ave, Pomona, CA 91768</em></li></ul>
+              </div>
+            </div>
+            <div class="col-xs-4 col-sm-4">
+              <!-- MAKES THE 3 SOCIAL ICON IN A ROW BUT CANT GET ALIGNMENT TO WORK
+              <div class="col-xs-4 col-sm-4 text-nowrap">-->
+                <font color="000000">
+                <h3>Social</h3>
+                <hr class="intro-divider1">
+                <ul class="list-inline">
+                  <li>
+                    <a href="https://www.facebook.com/Liberal-Studies-Department-at-Cal-Poly-Pomona-130583600353507/" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook fa-lg"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/cpplsclub" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter fa-lg"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/edu/california-state-polytechnic-university-pomona-17815" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin fa-lg"></i></a>
+                  </li>
+                </ul><br>
+                </font>
+              </div>
+              <div class="col-xs-4 col-sm-4">
+                <font color="000000">
+                <h3>Contact</h3>
+                <hr class="intro-divider1">
+                </font>
+                <a href="contact.html" class="btn-social btn-outline"><i class="fa fa-fw fa-envelope fa-lg"></i></a>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <font color="#000000" class="text-nowrap">Copyright &copy; 3 Drops 2016</font>
+                  </font>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </html>
