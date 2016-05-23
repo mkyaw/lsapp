@@ -34,7 +34,7 @@
           <span class="icon-bar"></span>
           </button>
           <!--<a class="navbar-brand" href="#page-top"><img src="img/LSLogoGold.png"></a>-->
-          <%= link_to image_tag("LSLogoGold.png"), "#page-top" %>
+          <%= link_to image_tag("LSLogoGold.png"), root_path %>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -42,18 +42,16 @@
             <li class="hidden">
               <a href="#page-top"></a>
             </li>
-            <li>
-              <a href="addcourse.html">Add Course</a>
-            </li>
             <li class="page-scroll">
               <a href="#about">About</a>
             </li>
-            <li class="page-scroll">
-              <a href="signup.html">Signup</a>
-            </li>
-            <li class="page-scroll">
-              <a href="login.html">Login</a>
-            </li>
+            <% if user_signed_in? %>
+              <li><a href="#">Dashboard</a></li>
+              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'Log In', new_user_session_path %></li>
+              <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <% end %>
             <!--
             <li class="page-scroll">
               <a href="#contact">Contact</a>
@@ -107,7 +105,8 @@
                 <h3>Contact</h3>
                 <hr class="intro-divider1">
                 </font>
-                <a href="contact.html" class="btn-social btn-outline"><i class="fa fa-fw fa-envelope fa-lg"></i></a>
+                <!--<a href="contact.html" class="btn-social btn-outline"><i class="fa fa-fw fa-envelope fa-lg"></i></a>-->
+                <%= link_to '<i class="fa fa-fw fa-envelope fa-lg"></i>'.html_safe, contact_path, class: "btn-social btn-outline" %>
               </div>
               <div class="row">
                 <div class="col-xs-12">

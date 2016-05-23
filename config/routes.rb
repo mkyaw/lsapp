@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
+  get '/contact' => 'static_pages#contact'
   
   resources :courses, only: [:index, :show]
   
