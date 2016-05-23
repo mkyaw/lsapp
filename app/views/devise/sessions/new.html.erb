@@ -8,18 +8,18 @@
           <div class="form">
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
               <div class="form-group">
-                <%= f.label :email, style: "color:black;" %><br />
+                <%= f.label :email, style: "color:#656262;" %><br />
                 <%= f.email_field :email, autofocus: true, placeholder: 'Enter email' %>
               </div>
             
               <div class="form-group">
-                <%= f.label :password, style: "color:black;" %><br />
+                <%= f.label :password, style: "color:#656262;" %><br />
                 <%= f.password_field :password, autocomplete: "off", placeholder: 'Enter password' %>
               </div>
             
               <% if devise_mapping.rememberable? -%>
                 <div class="checkbox">
-                  <%= f.check_box :remember_me %><span style="color:black;"><strong>&nbsp;&nbsp;Remember Me</strong></span>
+                  <%= f.check_box :remember_me %><span style="color:#656262;"><strong>&nbsp;&nbsp;Remember Me</strong></span>
                 </div>
               <% end -%>
               
