@@ -43,7 +43,8 @@
               <a href="#page-top"></a>
             </li>
             <li class="page-scroll">
-              <a href="#about">About</a>
+              <%= link_to 'About', root_path(anchor: "about") %>
+              <!--<a href="#about">About</a>-->
             </li>
             <% if user_signed_in? %>
               <li><a href="#">Dashboard</a></li>
