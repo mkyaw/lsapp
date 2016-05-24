@@ -4,6 +4,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   before_action :configure_permitted_parameters, if: :devise_controller?
+  
+  # Sign In Redirect Path
+  def after_sign_in_path_for(resource_or_scope)
+   root_path(anchor: "about")
+  end
+  
+  # Sign Up Redirect Path
+  def after_sign_up_path_for(resource_or_scope)
+   root_path(anchor: "about")
+  end
 
   protected
 
