@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
   
   # Sign In Redirect Path
   def after_sign_in_path_for(resource_or_scope)
-   root_path(anchor: "about")
+    if current_user.admin?
+      admin_path
+    else
+      root_path(anchor: "about")
+    end
   end
   
   # Sign Up Redirect Path
