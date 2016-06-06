@@ -21,8 +21,8 @@
     
     <h1 style="padding-top:0px; font-size:50px;"><em>Students</em></h1>
     <% @students.each do |student| %>
-        <h2>
-            <%= link_to (student.first_name + " " +  student.last_name), student_student_courses_path(student.id) %>
+        <h2 style="color:#18BC9C;">
+            <%= student.first_name + " " +  student.last_name %>
         </h2>
         <h5>
             <%= student.email  %>
