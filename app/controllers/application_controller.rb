@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     if current_user.admin?
       admin_courses_path
     else
-      student_student_courses_path(current_user.id)
+      student_student_answers_path(current_user.id)
     end
   end
   
