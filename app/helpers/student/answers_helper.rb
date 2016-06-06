@@ -1,0 +1,2 @@
+module Student::AnswersHelper
+end

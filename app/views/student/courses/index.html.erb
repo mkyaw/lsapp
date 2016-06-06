@@ -1,24 +1,67 @@
+<!--STUDENT DASHBOARD-->
 <header>
     <div class="container" style="padding-top: 60px;">
-        <h1>Student Courses Index Page</h1>
-        <h3 class="pull-right"><%= @user.email %></h3>
+        <h1><%= @user.first_name%>'s Dashboard</h1>
+        <div class="pull-right">
+            <div style="color:#18BC9C;">
+                <h3><%= @user.first_name + " " + @user.last_name %></h3>
+            </div>
+            <h5><%= @user.email %></h5>
+        </div>
+        
+        <br />
         <br class="clr"/>
-        <%= collection_select(:course, :course_id, Course.all, :id, :title) %>
-        <% @courses.each do |course| %>
-            <br />
-            <h2 class="text-center">
-                <%= link_to course.title, '#' %>
-            </h2>
-            <br />
-            <div class="col-sm-8 col-xs-12">
-                <%= course.description %>
+        
+        <h1 style="padding-top:0px; padding-bottom:10px; font-size:50px;"><em>Courses</em></h1>
+        
+        <%# if false %>
+        <%= collection_select(:post, :course_id, Course.all, :id, :title) %>
+        <%= link_to raw('CREATE NEW ENTRY <i class="fa fa-plus" aria-hidden="true"></i>'), new_student_student_answer_path, class: 'btn btn-sm btn-success' %>
+        <%# end %>
+        
+        
+        <% if false%>
+        <div class="form">
+           <%= simple_form_for @course, url: student_student_courses_path do |f| %>
+            <div class="form-group">
+              <%#= f.input :title, label: 'Course ID', placeholder: 'HUM101' %>
+              <%#= f.collection_select(:post, :course_id, Course.all, :id, :title) %>
             </div>
-            <div class="col-sm-4 col-xs-12 text-center">
-                <%= link_to 'More Details...', '#', class: 'btn btn-primary btn-large' %>
+            
+            <select name="course">
+              <ul class="dropdown-menu">
+                <% @courses.each do |course| %>
+                    <option value="<%= course.title %>"><%= course.title %></option>
+                    
+                <% end %>
+              </ul>
+            </select>
+            
+            <br />
+            
+            <div class="actions">
+              <%= f.submit "CREATE NEW COURSE ENTRY", style: "background: #5CB85C; color:#fff;" %>
             </div>
-            <br class="clr" />
-            <hr />
+          <% end %>
+        </div>
         <% end %>
+        <hr />
+        
+        <% @student_courses.each do |course| %>
+            <h3><%= course.title %></h3>
+        <% end %>
+        
+        
     </div>
 </header>
+
+<script>
+    
+    // $(".dropdown-menu li a").click(function(){
+
+    //   $(this).parents(".btn-group").find('.selection').text($(this).text());
+    //   $(this).parents(".btn-group").find('.selection').val($(this).text());
+    
+    // });
+</script>
     
