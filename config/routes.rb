@@ -8,10 +8,18 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   get '/contact' => 'static_pages#contact'
   
-  resources :courses, only: [:index, :show]
+  # namespace :student do
+  #   resources :courses, only: [:index, :show]
+  # end
   
-  resources :questions, only: [] do
-      resources :answers, only: [:index, :new, :create, :show]
+  namespace :student do
+    resources :students, only:[:index, :new, :create, :show] do
+      resources :courses, only: [:index, :new, :create, :show] do
+        resources :questions, only: [] do
+            resources :answers
+        end
+      end
+    end
   end
   
   namespace :admin do
@@ -19,6 +27,8 @@ Rails.application.routes.draw do
       resources :questions, only: [:index, :new, :create, :show]
     end
   end
+  
+  resources :courses
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

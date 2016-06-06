@@ -1,12 +1,33 @@
-<br />
-<ul style="list-style: none;">
-    <li>
-        <div class="booyah-box col-xs-10 col-xs-offset-1">
-          <% @courses.each do |course| %>
-              <h3 class="text-center"><%= course.title %></h3>
-              <p><i><%= course.description %></i></p>
-              <br />
-          <% end %>
-        </div>
-    </li>
-</ul>
+<!-- ADMIN DASHBOARD -->
+<header>
+    <div class="container" style="padding-top: 60px; padding-bottom:0px;">
+        <h1>Admin Dashboard</h1>
+    </div>
+    
+    <h1 style="padding-top:0px; padding-bottom:10px; font-size:50px;"><em>Courses</em></h1>
+    <%= link_to raw('CREATE NEW COURSE <i class="fa fa-plus" aria-hidden="true"></i>'), new_course_path, class: 'btn btn-lg btn-success' %>
+    <% @courses.each do |course| %>
+        <br /><br />
+        <h2>
+            <%= course.title + " - " + course.description %>
+            <br />
+            <%= link_to raw('EDIT <i class="fa fa-pencil" aria-hidden="true"></i>'), edit_course_path(course.id), class: 'btn btn-warning btn-sm' %>
+            <%= link_to raw('DELETE <i class="fa fa-trash-o" aria-hidden="true"></i>'), course, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger btn-sm' %>
+        </h2>
+        <br class="clr" />
+    <% end %>
+    
+    <hr style="border-top: 1px solid #333333;"/>
+    
+    <h1 style="padding-top:0px; font-size:50px;"><em>Students</em></h1>
+    <% @students.each do |student| %>
+        <h2 style="color:#18BC9C;">
+            <%= student.first_name + " " +  student.last_name %>
+        </h2>
+        <h5>
+            <%= student.email  %>
+        </h5>
+        <br class="clr" />
+    <% end %>
+</header>
+    

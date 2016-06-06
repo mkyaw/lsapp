@@ -1,0 +1,24 @@
+<header>
+    <div class="container" style="padding-top: 60px;">
+        <h1>Student Courses Index Page</h1>
+        <h3 class="pull-right"><%= @user.email %></h3>
+        <br class="clr"/>
+        <%= collection_select(:course, :course_id, Course.all, :id, :title) %>
+        <% @courses.each do |course| %>
+            <br />
+            <h2 class="text-center">
+                <%= link_to course.title, '#' %>
+            </h2>
+            <br />
+            <div class="col-sm-8 col-xs-12">
+                <%= course.description %>
+            </div>
+            <div class="col-sm-4 col-xs-12 text-center">
+                <%= link_to 'More Details...', '#', class: 'btn btn-primary btn-large' %>
+            </div>
+            <br class="clr" />
+            <hr />
+        <% end %>
+    </div>
+</header>
+    
