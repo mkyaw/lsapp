@@ -47,7 +47,11 @@
               <!--<a href="#about">About</a>-->
             </li>
             <% if user_signed_in? %>
-              <li><a href="#">Dashboard</a></li>
+              <% if current_user.admin? %>
+                <li><%= link_to 'Admin Dashboard', admin_courses_path %></li>
+              <% else %>
+                <li><%= link_to 'Student Dashboard', student_student_courses_path %></li>
+              <% end %>
               <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to 'Log In', new_user_session_path %></li>

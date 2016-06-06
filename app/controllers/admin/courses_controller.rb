@@ -3,6 +3,8 @@ class Admin::CoursesController < ApplicationController
     
     def index
         @courses = Course.all
+        # @products = @products.status(params[:status]) if params[:status].present?
+        @students = User.all
     end
     
     def new

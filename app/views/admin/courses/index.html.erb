@@ -1,12 +1,24 @@
-<br />
-<ul style="list-style: none;">
-    <li>
-        <div class="booyah-box col-xs-10 col-xs-offset-1">
-          <% @courses.each do |course| %>
-              <h3 class="text-center"><%= course.title %></h3>
-              <p><i><%= course.description %></i></p>
-              <br />
-          <% end %>
-        </div>
-    </li>
-</ul>
+<!-- ADMIN DASHBOARD -->
+<header>
+    <div class="container" style="padding-top: 60px; padding-bottom:10px;">
+        <h1>Admin Dashboard</h1>
+    </div>
+    <h1 style="padding-top:0px; font-size:50px;"><em>Courses</em></h1>
+    <% @courses.each do |course| %>
+        <h2>
+            <%= link_to course.title , course_path %>
+        </h2>
+        <br class="clr" />
+    <% end %>
+    
+    <hr style="border-top: 1px solid #333333;"/>
+    
+    <h1 style="padding-top:0px; font-size:50px;"><em>Students</em></h1>
+    <% @students.each do |student| %>
+        <h2>
+            <%= link_to (student.first_name + " " +  student.last_name + " - " + student.email), student_student_courses_path(student.id) %>
+        </h2>
+        <br class="clr" />
+    <% end %>
+</header>
+    
