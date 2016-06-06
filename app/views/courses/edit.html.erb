@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="login-page">
-          <h2 style="color:black;">New Course</h2>
+          <h2 style="color:black;">Edit Course</h2>
           <br />
           <div class="form">
-             <%= simple_form_for @course, url: admin_courses_path do |f| %>
+             <%= simple_form_for @course do |f| %>
               <div class="form-group">
                 <%= f.input :title, label: 'Course ID', placeholder: 'HUM101' %>
               </div>
@@ -15,7 +15,7 @@
               </div>
               <br />
               <div class="actions">
-                <%= f.submit "Create", style: "background: #5CB85C; color:#fff;" %>
+                <%= f.submit "Edit", style: "background: #5CB85C; color:#fff;" %>
               </div>
             <% end %>
             

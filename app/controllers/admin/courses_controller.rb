@@ -14,7 +14,7 @@ class Admin::CoursesController < ApplicationController
     def create
         @course = current_user.courses.create(course_params)
         if @course.valid?
-            redirect_to admin_course_path(@course)
+            redirect_to admin_courses_path
         else
             render :new, status: :unprocessable_entity
         end
@@ -22,6 +22,15 @@ class Admin::CoursesController < ApplicationController
     
     def show
         @course = Course.find(params[:id])
+    end
+    
+    def edit
+        @course = Course.find(params[:id])
+        if @course.valid?
+            redirect_to admin_courses_path
+        else
+            render :new, status: :unprocessable_entity
+        end
     end
     
     private

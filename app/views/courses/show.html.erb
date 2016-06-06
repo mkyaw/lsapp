@@ -1,11 +1,12 @@
-<br />
+<header>
+<div class="container">
 
 <div class="booyah-box col-xs-10 col-xs-offset-1">
 
 <h1><%= @course.title %></h1>
 <strong><em><%= @course.description %></em></strong>
 
-<br /><br /><br />
+<br />
 <% @course.questions.each do |question| %>
     <li style="list-style: none;">
         <br />
@@ -29,3 +30,5 @@
 <% end %>
 
 </div>
+</div>
+</header>

@@ -1,6 +1,6 @@
 <!-- ADMIN DASHBOARD -->
 <header>
-    <div class="container" style="padding-top: 60px; padding-bottom:10px;">
+    <div class="container" style="padding-top: 60px; padding-bottom:0px;">
         <h1>Admin Dashboard</h1>
     </div>
     
@@ -9,7 +9,10 @@
     <% @courses.each do |course| %>
         <br /><br />
         <h2>
-            <%= link_to course.title , course_path(course.id) %>
+            <%= course.title + " - " + course.description %>
+            <br />
+            <%= link_to raw('EDIT <i class="fa fa-pencil" aria-hidden="true"></i>'), edit_course_path(course.id), class: 'btn btn-warning btn-sm' %>
+            <%= link_to raw('DELETE <i class="fa fa-trash-o" aria-hidden="true"></i>'), course, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger btn-sm' %>
         </h2>
         <br class="clr" />
     <% end %>
@@ -19,8 +22,11 @@
     <h1 style="padding-top:0px; font-size:50px;"><em>Students</em></h1>
     <% @students.each do |student| %>
         <h2>
-            <%= link_to (student.first_name + " " +  student.last_name + " - " + student.email), student_student_courses_path(student.id) %>
+            <%= link_to (student.first_name + " " +  student.last_name), student_student_courses_path(student.id) %>
         </h2>
+        <h5>
+            <%= student.email  %>
+        </h5>
         <br class="clr" />
     <% end %>
 </header>
