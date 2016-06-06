@@ -1,0 +1,31 @@
+<!--STUDENT ANSWER DASHBOARD-->
+<header>
+    <div class="container" style="padding-top: 60px;">
+        <h1 style="padding-bottom:0px;"><%= @user.first_name%>'s Dashboard</h1>
+        <div class="pull-right">
+            <div style="color:#18BC9C;">
+                <h3><%= @user.first_name + " " + @user.last_name %></h3>
+            </div>
+            <h5><%= @user.email %></h5>
+        </div>
+        
+        <br /><br />
+        <br class="clr"/>
+        
+        <h1 style="padding-top:0px; padding-bottom:10px; font-size:50px;"><em>Courses</em></h1>
+        
+        <%= link_to raw('CREATE NEW ENTRY <i class="fa fa-plus" aria-hidden="true"></i>'), new_student_student_answer_path, class: 'btn btn-lg btn-success' %>
+        
+        <hr />
+        
+        <% @answers.each do |answer| %>
+            <h3><%= answer.course_id  %></h3>
+            <%= link_to raw('EDIT <i class="fa fa-pencil" aria-hidden="true"></i>'), edit_student_student_answer_path(@user.id, answer.id), class: 'btn btn-warning btn-sm' %>
+            <%= link_to raw('DELETE <i class="fa fa-trash-o" aria-hidden="true"></i>'), student_student_answer_path(@user.id, answer.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger btn-sm' %>
+            <br /><br /><br />
+        <% end %>
+        
+        
+    </div>
+</header>
+    

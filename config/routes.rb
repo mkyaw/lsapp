@@ -14,11 +14,9 @@ Rails.application.routes.draw do
   
   namespace :student do
     resources :students, only:[:index, :new, :create, :show] do
-      resources :courses, only: [:index, :new, :create, :show] do
-        resources :questions, only: [] do
-            resources :answers
-        end
-      end
+      # resources :courses, only: [:index, :new, :create, :show] do
+        resources :answers
+      # end
     end
   end
   
