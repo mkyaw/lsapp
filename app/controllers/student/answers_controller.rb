@@ -25,7 +25,22 @@ class Student::AnswersController < ApplicationController
     end
     
     def edit
-        @answer = @current_user.answers.find(params[:id])
+        @answer = Answer.find(params[:id])
+    end
+    
+    def update
+        @answer = Answer.find(params[:id])
+        if @answer.update_attributes(answer_params)
+            redirect_to student_student_answers_path
+        else
+            render :edit, status: :unprocessable_entity
+        end
+    end
+    
+    def destroy
+        @answer = Answer.find(params[:id])
+        @answer.destroy
+        redirect_to student_student_answers_path
     end
     
     def answer_params
