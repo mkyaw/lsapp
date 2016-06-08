@@ -6,7 +6,7 @@ class Student::AnswersController < ApplicationController
         @student_courses = current_user.courses
         @courses = Course.all
         @course = Course.new
-        @answers = Answer.all
+        @answers = @user.answers
     end
     
     def new
@@ -15,7 +15,6 @@ class Student::AnswersController < ApplicationController
     
     def create
         @user = current_user
-        # @course = current_user.courses.create(course_params)
         @answer = @current_user.answers.create(answer_params)
         if @answer.valid?
             redirect_to student_student_answers_path
