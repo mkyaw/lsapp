@@ -9,6 +9,11 @@ class Student::AnswersController < ApplicationController
         @answers = @user.answers
     end
     
+    def show
+        @user = current_user
+        @answer = @current_user.answers.find(params[:id])
+    end
+    
     def new
         @answer = Answer.new
     end

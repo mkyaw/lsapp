@@ -19,7 +19,7 @@
         <hr />
         
         <% @answers.each do |answer| %>
-            <h3><%= answer.course_id  %></h3>
+            <h3><%= link_to answer.course_id, student_student_answer_path(@user.id, answer.id)  %></h3>
             <%= link_to raw('EDIT <i class="fa fa-pencil" aria-hidden="true"></i>'), edit_student_student_answer_path(@user.id, answer.id), class: 'btn btn-warning btn-sm' %>
             <%= link_to raw('DELETE <i class="fa fa-trash-o" aria-hidden="true"></i>'), student_student_answer_path(@user.id, answer.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger btn-sm' %>
             <br /><br /><br />
